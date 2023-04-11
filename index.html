@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" media="screen and (min-width: 900px)" href="styles.css">
+  <link rel="stylesheet" media="screen and (max-width: 900px)" href="styles2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    body {
+      font-family: 'Kumbh Sans', sans-serif;
+    }
+
+    h2,
+    h3 {
+      font-weight: 700;
+    }
+  </style>
+  <script src="script.js" defer></script>
+  <script src="script2.js" defer></script>
+</head>
+
+<body>
+  <div class="content">
+    <div class="navigation-div" id="navigation-div">
+      <div class="div">
+        <img src="images\icon-close copy.svg" alt="close icon" class="nav_close" id="nav_close">
+        <a href="#">
+          <h3>Collections</h3>
+        </a>
+        <a href="#">
+          <h3>Men</h3>
+        </a>
+        <a href="#">
+          <h3>Women</h3>
+        </a>
+        <a href="#">
+          <h3>About</h3>
+        </a>
+        <a href="#">
+          <h3>Contact</h3>
+        </a>
+      </div>
+    </div>
+    <div class="main-content" id="main-content">
+      <div class="nav" id="nav">
+        <div class="nav-bar">
+          <div class="description">
+            <div class="logo-div">
+              <a href="#"><img src="images\logo.svg" alt="logo"></a>
+            </div>
+          </div>
+          <div class="links">
+            <div>
+              <a href="#" class="link1">Collections</a>
+              <hr class="hover_line line1">
+            </div>
+            <div>
+              <a href="#" class="link2">Men</a>
+              <hr class="hover_line line2">
+            </div>
+            <div>
+              <a href="#" class="link3">Women</a>
+              <hr class="hover_line line3">
+            </div>
+            <div>
+              <a href="#" class="link4">About</a>
+              <hr class="hover_line line4">
+            </div>
+            <div>
+              <a href="#" class="link5">Contact</a>
+              <hr class="hover_line line5">
+            </div>
+          </div>
+          <div class="cartimg_div" id="cartimg_div">
+            <p class="num_of_shoes" id="num_of_shoes">3</p>
+            <img src="images\icon-cart.svg" alt="icon-cart" class="cartimg" id="cartimg">
+          </div>
+          <div class="avatar_div">
+            <img src="images\image-avatar.png" alt="image avatar" class="avatar" width="40px" height="40px">
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar2">
+        <div class="nav2">
+          <img src="images\icon-menu.svg" alt="menu-icon" id="menu" onclick="showMenu()">
+          <a href="#"><img src="images\logo.svg" alt="sneakers-logo"></a>
+          <div class="mobile-cartimg-div">
+            <p class="mobileNumBoughtProducts">0</p>
+            <img src="images\icon-cart.svg" alt="cart_icon" onclick="showCart()">
+          </div>
+          <img src="images\image-avatar.png" alt="avatar-image" width="30px" height="30px">
+        </div>
+      </div>
+
+      <div class="img-cart-div">
+        <div class="image-navigators">
+          <button class="previous-btn" id="mobile-previous">
+            <img src="images\icon-previous.svg" alt="mobile-icon-previous" class="mobile-previous" id="mobile-previous">
+          </button>
+          <div class="mobile_selected_item_div">
+            <img src="images\image-product-1.jpg" alt="" class="mobile_selected_item" id="mobile_selected_item">
+          </div>
+          <button class="next-btn" id="mobile_next">
+            <img src="images\icon-next.svg" alt="mobile-icon-next" class="mobile-next" id="mobile_next">
+          </button>
+        </div>
+        <div class="cart-info-div1 displayMobileCart" id="cart-info-div">
+          <div class="cart-info-div2">
+            <h3>Cart</h3>
+            <hr>
+            <div class="mobile-notifyer-div" id="mobile-notifyer-div">
+              <p>Your cart is empty</p>
+            </div>
+            <div class="mobile-display-div" id="mobile-display-div">
+              <div class="mobile-griddiv1">
+                <div class="mobile-details-div">
+                  <img src="images\image-product-1-thumbnail.jpg" alt="Added Item Image" class="mobile_bought_item">
+                  <p id="mobile-items-description">Fall Limited Edition Sneakers<br>$125.00 x 1 <b>$125.00</b></p>
+                  <div class="delete_icon_div">
+                    <img src="images\icon-delete.svg" alt="Delete Icon" class="mobile-delete-icon"
+                      id="mobile-delete-icon">
+                  </div>
+                </div>
+                <div class="mobile-button-div">
+                  <button class="mobile-checkout-btn">Checkout</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <main>
+        <div class="pointers">
+          <div class="line-div">
+            <hr class="line">
+          </div>
+          <div class="cartItemsDiv displayCartItems" id="cartItemsDiv">
+            <div class="cart-text-div">
+              <h4>Cart</h4>
+            </div>
+            <hr>
+            <div class="notifyer-div" id="notifyer-div">
+              <p style="color: hsl(219, 9%, 45%);">Your cart is empty</p>
+            </div>
+            <div class="display-div" id="display-div">
+              <div class="griddiv1">
+                <div class="details-div">
+                  <img src="images\image-product-1-thumbnail.jpg" alt="Added Item Image" class="bought_item">
+                  <p id="items-description">Fall Limited Edition Sneakers<br>$125.00 x 1 <b>$125.00</b></p>
+                  <div class="delete_icon_div">
+                    <img src="images\icon-delete.svg" alt="Delete Icon" class="delete-icon" id="delete-icon">
+                  </div>
+                </div>
+                <div class="button-div">
+                  <button class="checkout-btn">Checkout</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flexdiv" id="flexdiv">
+          <div class="griddiv">
+            <div class="itemsdiv">
+              <div class="selected_item_div">
+                <img src="images\image-product-1.jpg" alt="selected_item" id="main_item" class="selected_item">
+              </div>
+              <div class="items">
+                <img src="images\image-product-1-thumbnail.jpg" alt="item1" class="item selected" id="item1"
+                  onclick="changeImage('item1')">
+                <img src="images\image-product-2-thumbnail.jpg" alt="item2" class="item" id="item2"
+                  onclick="changeImage('item2')">
+                <img src="images\image-product-3-thumbnail.jpg" alt="item3" class="item" id="item3"
+                  onclick="changeImage('item3')">
+                <img src="images\image-product-4-thumbnail.jpg" alt="item4" class="item" id="item4"
+                  onclick="changeImage('item4')">
+              </div>
+            </div>
+            <!-- 21, 31 -->
+
+
+
+            <div class="datadiv">
+              <div class="data">
+                <p class="company_name">SNEAKER COMPANY</p>
+                <h2>Fall Limited Edition<br> Sneakers</h2>
+                <p class="descriptionP">These low-profile sneakers are your perfect casual wear<br>companion. Featuring
+                  a
+                  durable rubber outer sole, they’ll<br>withstand everything the weather can offer.</p>
+                <p class="mobile-descriptionP">These low-profile sneakers are your perfect<br>casual wear
+                  companion. Featuring
+                  a durable<br>rubber outer sole, they’ll withstand everything<br>the weather can offer.</p>
+
+                <div class="price_description">
+                  <h3>$125.00</h3>
+                  <p class="reduction_rate">50%</p>
+                  <p class="former_price">$250.00</p>
+                </div>
+
+                <div class="preferences">
+                  <div class="minus_div">
+                    <img src="images\icon-minus.svg" alt="minus icon" id="minus">
+                  </div>
+                  <p id="num_products">0</p>
+                  <div class="plus_div">
+                    <img src="images\icon-plus.svg" alt="plus icon" id="plus">
+                  </div>
+                  <button id="add_to_cart">
+                    <img src="images\icon-cart.svg" alt="cart icon">
+                    <span>Add to Cart</span>
+                  </button>
+                </div>
+                <div class="mobile-preferences">
+                  <div class="num-preferences">
+                    <div class="minus_div">
+                      <img src="images\icon-minus.svg" alt="minus icon" id="mobile_minus">
+                    </div>
+                    <p id="mobile_num_products">0</p>
+                    <div class="plus_div">
+                      <img src="images\icon-plus.svg" alt="plus icon" id="mobile_plus">
+                    </div>
+                  </div>
+                  <div class="addcart-div">
+                    <button id="mobile-addtocart-btn">
+                      <img src="images\icon-cart.svg" alt="cart icon">
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flexdiv2" id="flexdiv2">
+          <div class="lightbox_div">
+            <div class="close_icon_div">
+              <img src="images\icon-close.svg" alt="close" class="close_icon" id="close_icon"
+                onmouseover="closeMouseOver()" onmouseout="closeMouseOut()">
+            </div>
+            <div class="navigate_images">
+              <button class="icon-previous-div" id="previous_button">
+                <img src="images\icon-previous.svg" alt="icon-previous" class="icon-previous">
+              </button>
+              <img src="images\image-product-1.jpg" alt="selected_item" class="selected_img" id="selected_img">
+              <button class="icon-next-div" id="next_button">
+                <img src="images\icon-next.svg" alt="icon-next" class="icon-next">
+              </button>
+            </div>
+            <div class="img_items">
+              <img src="images\image-product-1-thumbnail.jpg" alt="item1"
+                class="lightbox-item image-product-1-thumbnail selected" id="lightbox-item1"
+                onclick="changeLightboxImage('lightbox-item1')">
+              <img src="images\image-product-2-thumbnail.jpg" alt="item2"
+                class="lightbox-item image-product-2-thumbnail" id="lightbox-item2"
+                onclick="changeLightboxImage('lightbox-item2')">
+              <img src="images\image-product-3-thumbnail.jpg" alt="item3"
+                class="lightbox-item image-product-3-thumbnail" id="lightbox-item3"
+                onclick="changeLightboxImage('lightbox-item3')">
+              <img src="images\image-product-4-thumbnail.jpg" alt="item4"
+                class="last_item image-product-4-thumbnail lightbox-item" id="lightbox-item4"
+                onclick="changeLightboxImage('lightbox-item4')">
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
+
+<!--  Collections
+  Men
+  Women
+  About
+  Contact
+
+  Sneaker Company
+
+  Fall Limited Edition Sneakers
+
+  These low-profile sneakers are your perfect casual wear companion. Featuring a 
+  durable rubber outer sole, they’ll withstand everything the weather can offer.
+
+  $125.00
+  50%
+  $250.00
+
+  0
+  Add to cart -->
+
+
+<!-- <div class=" attribution">
+              Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+              Coded by <a href="#">Your Name Here</a>.
+            </div> -->
